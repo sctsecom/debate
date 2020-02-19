@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Northwest New Jersey Debate League</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <style>
+    .white-text li a {
+      color: white;
+    }
+
+    .card-image {
+      height: 600px;
+      /* Your height here */
+      overflow: hidden;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!--Navbar-->
+  <div class="navbar-fixed teal">
+    <nav class="teal">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo center"><img src="images/logo.png" width="auto" height="100"></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="left white-text hide-on-med-and-down">
+          <li><a href="rules.html">Rules and Regulations</a></li>
+          <li><a href="fundraisers.html">Fundraisers & Events</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="gallery.html">Debate Gallery</a></li>
+        </ul>
+        <ul class="right white-text hide-on-med-and-down">
+          <li><a href="otherrules.html">Coach & Judge Regulations</a></li>
+          <li><a href="photos.html">Photo Release Form</a></li>
+          <li><a href="documents.html">Documents and Forms</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+
+  <ul class="sidenav" id="mobile-demo">
+
+    <li><a href="sass.html">Fundraisers & Events</a></li>
+    <li><a href="badges.html">Contact Us</a></li>
+    <li><a href="collapsible.html">Rules and Regulations</a></li>
+    <li><a href="otherrules.html">Coach/Judge Rules and Regulations</a></li>
+    <li><a href="photos.html">Photo Release Form</a></li>
+    <li><a href="documents.html">Documents and Forms</a></li>
+    <li><a href="gallery.html">Debate Gallery</a></li>
+  </ul>
+
+  <div class="section">
+    <div class="container">
+      <h1 class="teal-text center"><b>Contact Northwest New Jersey Debate League</b></h1>
+      <div class="row">
+        <div class="col s12 m6 l4">
+          <p class="flow-text center"><b>105 North Church Road Sparta, New Jersey 07871</b></p>
+          <p class="flow-text center"><b>nwnjdebate@gmail.com</b></p>
+          <p class="flow-text center"><b>937-383-6700 x548</b></p>
+        </div>
+        <div class="col s12 m6 l8">
+          <form name="submit-to-google-sheet">
+            <div class="row">
+              <div class="col s6">
+                <input name="Name" placeholder="Name" required>
+              </div>
+              <div class="col s6">
+                <input name="Email" type="email" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s6">
+                <input name="Phone" type="tel" placeholder="Phone Number">
+              </div>
+              <div class="col s6">
+                <input name="Address" type="text" placeholder="Address">
+              </div>
+            </div>
+            <input name="Subject" type="text" placeholder="Subject">
+            <div class="input-field col s12">
+              <textarea id="textarea1" name="Message" class="materialize-textarea"></textarea>
+              <label for="textarea1">Message</label>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <button type="submit" class="btn btn-large waves-effect waves-light teal white-text center">Submit Form</button>
+              </div>
+            </div>
+
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+
+
+  
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyirIMCMTObcqTWyvV1XlKKfsUzgTThkbEYKCjZuVcPHNYcfl1-/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, {
+          method: 'POST',
+          body: new FormData(form)
+        })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+
+</body>
+
+</html>
